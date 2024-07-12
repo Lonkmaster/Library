@@ -6,11 +6,8 @@ const form = document.querySelector("#addBookForm")
 const cards = document.querySelector("#bookGrid")
 const readBtn = document.querySelectorAll(".hasRead")
 const showFormBtn = document.querySelector(".inputNewBook")
-
+const submitBtn = document.querySelector(".submitBtn")
 const myLibrary = [];
-
-
-showFormBtn.style.display = "none"; 
 
 newBookBtn.addEventListener("click", () => {
     if (showFormBtn.style.display === "none") {
@@ -20,6 +17,23 @@ newBookBtn.addEventListener("click", () => {
     }
 })
 
+submitBtn.addEventListener("click", () => {
+    showFormBtn.style.display = "none"
+
+})
+
+
+function clearinputField() { 
+    let title = document.querySelector("#title")
+    let author = document.querySelector("#author")
+    let pages = document.querySelector("#pages")
+    let isRead = document.querySelector("#isRead")
+
+    title.value = "";
+    pages.value = "";
+    author.value = "";
+    isRead.checked = false;
+}
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -79,6 +93,7 @@ function addBookToLibrary() {
     myLibrary.push(newBook)
     console.log(myLibrary)
     render()
+    clearinputField()
 }
 
 
