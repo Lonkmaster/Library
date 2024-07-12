@@ -1,0 +1,49 @@
+body {
+    background-color: #164e63;
+    padding: 0;
+    margin: 0;
+}
+
+
+.header { 
+    display: flex;
+    justify-content: space-around;
+    gap: 25px;
+    color: black;
+    background-color: #ccfbf1;
+    padding: 25px;
+}
+
+.bookContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.addBook {
+    padding: 10px;
+    width: 150px;
+}
+
+.book {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+.inputNewBook {
+    background-color: white;
+    padding: 10px;
+    width: 300px;
+}
+
+.newBookForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
