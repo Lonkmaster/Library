@@ -9,6 +9,9 @@ const showFormBtn = document.querySelector(".inputNewBook")
 const submitBtn = document.querySelector(".submitBtn")
 const myLibrary = [];
 
+let opacity = 0;
+let intervalId = 0;
+
 newBookBtn.addEventListener("click", () => {
     if (showFormBtn.style.display === "none") {
         showFormBtn.style.display = "block";
@@ -22,6 +25,9 @@ submitBtn.addEventListener("click", () => {
 
 })
 
+document.getElementById("hasRead").addEventListener("click", () => {
+
+})
 
 function clearinputField() { 
     let title = document.querySelector("#title")
@@ -64,6 +70,7 @@ function render() {
         hasReadBtn.classList.add("hasRead");
         if (book.read == false) {
             hasReadBtn.textContent = "not read"
+            
         }
         else { 
             hasReadBtn.textContent = "read"
@@ -71,9 +78,12 @@ function render() {
         hasReadBtn.addEventListener("click", () => {
             if (hasReadBtn.innerHTML == 'not read') {
                 hasReadBtn.textContent = "read"
+                hasReadBtn.style.backgroundColor = "#10b981"
             }
             else if (hasReadBtn.innerHTML == "read") {
                 hasReadBtn.textContent = "not read"
+                hasReadBtn.style.backgroundColor = "#f5f5f4"
+
             }
         })
 
@@ -81,6 +91,7 @@ function render() {
 
     }
 //}
+
 
 function addBookToLibrary() {
 
@@ -103,9 +114,13 @@ for (let i = 0; i < readBtn.length; i++) {
     btn.addEventListener("click", () => {
         if (btn.innerHTML == 'not read') {
             btn.textContent = "read"
+            btn.style.backgroundColor = "#10b981"
+
         }
         else if (btn.innerHTML == "read") {
             btn.textContent = "not read"
+            btn.style.backgroundColor = "#f5f5f4"
+
         }
     })
 }

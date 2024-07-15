@@ -1,17 +1,59 @@
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+:root {
+    --colorWhite: white;
+    --bodyColor: #d2d1d3;
+    --noBorder: none;
+    --borderRadius: 6px;
+    --colorBlue: #06b6d4;
+
+}
+
+
 body {
-    background-color: #164e63;
+    height: 100vh;
+    background-color: var(--bodyColor);
     padding: 0;
     margin: 0;
 }
 
+
+.newBookForm input {
+    width: 150px;
+    margin-left: 30px;
+}
+
+#author {
+    margin-right: 32px;
+}
 
 .header { 
     display: flex;
     justify-content: space-around;
     gap: 25px;
     color: black;
-    background-color: #ccfbf1;
+    background-color: var(--colorWhite);
     padding: 25px;
+    box-shadow: 0px 2px 5px lightslategray
 }
 
 .bookContainer {
@@ -22,30 +64,90 @@ body {
     justify-content: center;
 }
 
+#bookGrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
 .addBook {
+    border: var(--noBorder);
+    background-color: var(--colorBlue);
+    color: var(--colorWhite);
+    border-radius: var(--borderRadius);
     padding: 10px;
     width: 150px;
 }
 
+.addBook:hover {
+    filter: brightness(90%);
+}
+
 .book {
     width: 350px;
+    margin: 20px;
     overflow: hidden;
-    background-color: white;
+    background-color: var(--colorWhite);
     padding: 15px;
     border-radius: 8px;
     margin-top: 10px;
-}
+    box-shadow: 0px 2px 5px lightslategray;
+    animation: fade-down 0.5s;
 
+
+}
 
 .inputNewBook {
-    background-color: white;
+    position: fixed;
+    right: -20px;
+    top: 110px;
+    margin: 20px;
+    color: rgb(214, 211, 211);
+    border-radius: 8px;
+    background-color: rgb(31, 2, 2);
     padding: 10px;
     width: 300px;
+    animation: fade-down 0.5s;
+
 }
+
 
 .newBookForm {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
+}
+
+.read {
+    margin-left: 60px;
+    margin-right: 70px;
+    flex-direction: column;
+}
+
+.delete {
+    color: var(--colorWhite);
+    background-color: #ec4899;
+    padding: 5px;
+    margin-right: 10px;
+    min-width: 70px;
+    border: var(--noBorder);
+    border-radius: var(--borderRadius)
+}
+
+.delete:hover {
+    filter: brightness(90%);
+}
+
+.hasRead {
+    color: black;
+    min-width: 70px;
+    padding: 5px;
+    border: var(--noBorder);
+    border-radius: var(--borderRadius)
+}
+
+.hasRead:hover {
+    filter: brightness(90%);
 }
